@@ -1,0 +1,42 @@
+# Version Control
+.svn
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.buildpath
+.project
+.settings/
+.build/
+.idea/
+nbproject/
+/tags
+.netbeans.xml
+
+# Compass/SASS/SCSS
+.sass-cache
+
+# Other
+node_modules
+
+/vendor/
+/release/
+sassdoc
+scss-lint-report.xml
+config.codekit
+
+/wordpress/*
+!/wordpress/.gitkeep
+
+/data/*
+!/data/.gitkeep
+
+/logs/*
+!/logs/.gitkeep
+
+docker-compose.override.yml
+
+notes.md
+/config/elasticsearch/plugins/*
