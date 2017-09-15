@@ -1,14 +1,12 @@
-# WordPress Docker Development Environment
+# WordPress Docker Development Environment [WIP]
 
-This is a Docker based local development environment for WordPress.
+This is a WIP Docker based local development environment for WordPress based on the marvelous [wp-local-docker](https://github.com/10up/wp-local-docker)
 
 ## What's Inside
 
-This project is based on [docker-compose](https://docs.docker.com/compose/). By default, the following containers are started: PHP-FPM, MariaDB, Elasticsearch, nginx, and Memcached. The `/wordpress` directory is the web root which is mapped to the nginx container.
+This project is based on [docker-compose](https://docs.docker.com/compose/). By default, the following containers are started: PHP-FPM, MySQL, Elasticsearch, nginx, and Memcached. The `/wordpress` directory is the web root which is mapped to the nginx container.
 
 You can directly edit PHP, nginx, and Elasticsearch configuration files from within the repo as they are mapped to the correct locations in containers.
-
-A [custom phpfpm image](https://github.com/10up/phpfpm-image) is used for this environment that adds a few extra things to the PHP-FPM image.
 
 The `/config/elasticsearch/plugins` folder is mapped to the plugins folder in the Elasticsearch container. You can drop Elasticsearch plugins in this folder to have them installed within the container.
 
@@ -19,13 +17,13 @@ The `/config/elasticsearch/plugins` folder is mapped to the plugins folder in th
 
 ## Setup
 
-1. `git clone https://github.com/10up/wp-local-docker.git <my-project-name>`
-1. `cd <my-project-name>`
-1. `docker-compose up`
-1. Run setup to download WordPress and create a `wp-config.php` file.
+1. `git clone https://github.com/adrianocalvitto/wp-docker.git <my-project-name>`
+2. `cd <my-project-name>`
+3. `docker-compose up -d`
+4. Run setup to download WordPress and create a `wp-config.php` file.
 	1. On Linux / Unix / OSX, run `sh bin/setup.sh`.
 	2. On Windows, run `./bin/setup`.
-1. Navigate to `http://localhost` in a browser to finish WordPress setup.
+5. Navigate to `http://localhost` in a browser to finish WordPress setup.
 	1. If you want to use a domain other than `http://localhost`, you'll need to add an entry to your hosts file. Ex: `127.0.0.1 docker.dev`
 
 Default MySQL connection information (from within PHP-FPM container):
@@ -84,10 +82,6 @@ This alias lets you run `dcbash` to SSH into the PHP/WordPress container.
 
 Alternatively, there is a script in the `/bin` directory that allows you to SSH in to the environment from the project directory directly: `./bin/ssh`.
 
-## MailCatcher
-
-MailCatcher runs a simple local SMTP server which catches any message sent to it, and displays it in it's built-in web interface. All emails sent by WordPress will be intercepted by MailCatcher. To view emails in the MailCatcher web interface, navigate to `http://localhost:1080` in your web browser of choice.
-
 ## Credits
 
-This project is our own flavor of an environment created by John Bloch.
+This project is based on the inspiring work by (10up)(https://github.com/10up/)
