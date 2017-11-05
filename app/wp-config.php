@@ -1,12 +1,13 @@
 <?php
 $root_dir = dirname(__DIR__);
+$html_dir = $root_dir . '/html';
 $webroot_dir = $root_dir . '/web';
-require_once($root_dir . '/vendor/autoload.php');
+require_once($html_dir . '/vendor/autoload.php');
 /* Expose global env() function from oscarotero/env */
 Env::init();
 /* Use Dotenv to set required environment variables and load .env file in root */
-$dotenv = new Dotenv\Dotenv($webroot_dir);
-if (file_exists($webroot_dir . '/.env')) {
+$dotenv = new Dotenv\Dotenv($html_dir);
+if (file_exists($html_dir . '/.env')) {
     $dotenv->load();
     $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL']);
 }

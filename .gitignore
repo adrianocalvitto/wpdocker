@@ -27,8 +27,9 @@ sassdoc
 scss-lint-report.xml
 config.codekit
 
-/public/web
-/public/vendor
+/public
+!/public/composer.json
+!/public/composer.lock
 
 /data/*
 !/data/.gitkeep
