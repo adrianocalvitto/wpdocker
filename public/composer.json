@@ -12,7 +12,7 @@
     }
   ],
   "keywords": [
-    "bedrock", "roots", "wordpress", "stack", "composer", "wp"
+    "wordpress", "stack", "composer", "wp", "docker"
   ],
   "config": {
     "preferred-install": "dist"
