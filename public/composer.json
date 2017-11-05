@@ -3,21 +3,16 @@
   "type": "project",
   "license": "MIT",
   "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
-  "homepage": "https://roots.io/bedrock/",
+  "homepage": "https://github.com/adrianocalvitto/wpdocker",
   "authors": [
     {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
-    },
-    {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
+      "name": "Adriano Calvitto",
+      "email": "adriano.calvitto@gmail.com",
+      "homepage": "https://github.com/adrianocalvitto"
     }
   ],
   "keywords": [
-    "bedrock", "roots", "wordpress", "stack", "composer", "vagrant", "wp"
+    "bedrock", "roots", "wordpress", "stack", "composer", "wp"
   ],
   "config": {
     "preferred-install": "dist"
