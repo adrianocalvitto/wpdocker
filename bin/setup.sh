@@ -1,10 +1,8 @@
 #!/bin/bash
 
-if [ -f "./wordpress/wp-config.php" ];
-then
-	echo "WordPress config file found."
-else
-	echo "WordPress config file not found. Installing..."
-	docker-compose exec --user www-data phpfpm wp core download
-	docker-compose exec --user www-data phpfpm wp core config --dbhost=mysql --dbname=wordpress --dbuser=root --dbpass=password
-fi
+docker-compose exec --user www-data phpfpm rm -rf web
+docker-compose exec --user www-data phpfpm composer install
+docker-compose exec --user www-data phpfpm cp -R src/wp-content/themes web/wp-content
+docker-compose exec --user www-data phpfpm mv vendor web/vendor
+docker-compose exec --user www-data phpfpm cp environments/development.env web/.env
+docker-compose exec --user www-data phpfpm cp src/wp-config.php web/wp-config.php

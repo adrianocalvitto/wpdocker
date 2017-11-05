@@ -27,8 +27,8 @@ sassdoc
 scss-lint-report.xml
 config.codekit
 
-/wordpress/*
-!/wordpress/.gitkeep
+/public/web
+/public/vendor
 
 /data/*
 !/data/.gitkeep
