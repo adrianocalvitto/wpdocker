@@ -27,7 +27,7 @@ sassdoc
 scss-lint-report.xml
 config.codekit
 
-/public
+/public/*
 !/public/composer.json
 !/public/composer.lock
 
