@@ -18,6 +18,12 @@ define('WP_ENV', env('WP_ENV') ?: 'production');
  */
 define('WP_HOME', env('WP_HOME'));
 define('WP_SITEURL', env('WP_SITEURL'));
+/**
+ * Custom Content Directory
+ */
+define('CONTENT_DIR', '/content');
+define('WP_CONTENT_DIR', $html_dir . CONTENT_DIR);
+define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', env('DB_NAME'));

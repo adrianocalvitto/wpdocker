@@ -33,7 +33,7 @@ services:
       - elasticsearch
     volumes:
       - "./public:/var/www/html"
-      - "./app/content/themes:/var/www/html/themes"
+      - "./app/content:/var/www/html/content"
       - "./app/wp-config.php:/var/www/html/wp-config.php"
       - "./app/environments/development/.env:/var/www/html/.env"
       - "./config/php-fpm/php.ini:/usr/local/etc/php/php.ini"
