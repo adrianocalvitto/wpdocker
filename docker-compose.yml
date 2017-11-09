@@ -33,7 +33,7 @@ services:
       - elasticsearch
     volumes:
       - "./public:/var/www/html"
-      - "./app/content:/var/www/html/content"
+      - "./app/content/themes/starter-theme:/var/www/html/content/themes/starter-theme"
       - "./app/wp-config.php:/var/www/html/wp-config.php"
       - "./app/wp-cli.yml:/var/www/html/wp-cli.yml"
       - "./app/environments/development/.env:/var/www/html/.env"
@@ -51,6 +51,7 @@ services:
     image: nginx:latest
     volumes:
       - "./public:/var/www/html"
+      - "./app/content/themes/starter-theme:/var/www/html/content/themes/starter-theme"
       - "./config/nginx/default.conf:/etc/nginx/conf.d/default.conf"
       - "./config/certs:/etc/nginx/certs"
       - "./logs/nginx:/var/log/nginx"
