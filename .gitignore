@@ -17,27 +17,26 @@ nbproject/
 
 # Compass/SASS/SCSS
 .sass-cache
+sassdoc
+scss-lint-report.xml
 
 # Other
 node_modules
 
 /vendor/
 /release/
-sassdoc
-scss-lint-report.xml
+
 config.codekit
 
-/public/*
-!/public/composer.json
-!/public/composer.lock
+/app/content
+/app/vendor
+/app/web
+!/app/content/themes
 
 /data/*
 !/data/.gitkeep
-
 /logs/*
 !/logs/.gitkeep
-
-docker-compose.override.yml
-
 notes.md
 /config/elasticsearch/plugins/*
+docker-compose.override.yml

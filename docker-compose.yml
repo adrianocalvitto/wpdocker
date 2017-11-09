@@ -9,8 +9,8 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
+      MYSQL_DATABASE: wpdocker
+      MYSQL_USER: wpdocker
       MYSQL_PASSWORD: password
   memcached:
     image: memcached:latest
@@ -32,11 +32,7 @@ services:
       - memcached
       - elasticsearch
     volumes:
-      - "./public:/var/www/html"
-      - "./app/content:/var/www/html/content"
-      - "./app/wp-config.php:/var/www/html/wp-config.php"
-      - "./app/wp-cli.yml:/var/www/html/wp-cli.yml"
-      - "./app/environments/development/.env:/var/www/html/.env"
+      - "./app:/var/www/html"
       - "./config/php-fpm/php.ini:/usr/local/etc/php/php.ini"
       - "./config/php-fpm/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini"
     restart: always
@@ -50,8 +46,7 @@ services:
       - "443:443"
     image: nginx:latest
     volumes:
-      - "./public:/var/www/html"
-      - "./app/content:/var/www/html/content"
+      - "./app:/var/www/html"
       - "./config/nginx/default.conf:/etc/nginx/conf.d/default.conf"
       - "./config/certs:/etc/nginx/certs"
       - "./logs/nginx:/var/log/nginx"
