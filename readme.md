@@ -1,10 +1,8 @@
-# WordPress Docker Development Environment [WIP]
-
-This is a WIP Docker based local development environment for WordPress based on the marvelous [wp-local-docker](https://github.com/10up/wp-local-docker)
+# WordPress Docker Development Environment
 
 ## What's Inside
 
-This project is based on [docker-compose](https://docs.docker.com/compose/). By default, the following containers are started: PHP-FPM, MySQL, Elasticsearch, nginx, and Memcached. The `/wordpress` directory is the web root which is mapped to the nginx container.
+This project is based on [docker-compose](https://docs.docker.com/compose/). By default, the following containers are started: PHP-FPM, MySQL, Elasticsearch, nginx, and Memcached. The `/app` directory is the html root which is mapped to the nginx container.
 
 You can directly edit PHP, nginx, and Elasticsearch configuration files from within the repo as they are mapped to the correct locations in containers.
 
@@ -26,18 +24,13 @@ The `/config/elasticsearch/plugins` folder is mapped to the plugins folder in th
 5. Navigate to `http://localhost` in a browser to finish WordPress setup.
 	1. If you want to use a domain other than `http://localhost`, you'll need to add an entry to your hosts file. Ex: `127.0.0.1 docker.dev`
 
-Default MySQL connection information (from within PHP-FPM container):
-
-```
-Database: wordpress
-Username: wordpress
-Password: password
-Host: mysql
-```
+Default MySQL connection information (from within PHP-FPM container) can be found in the environment definition for the mysql service in docker-compose.yml file.
 
 Default Elasticsearch connection information (from within PHP-FPM container):
 
-```Host: http://elasticsearch:9200```
+```
+Host: http://elasticsearch:9200
+```
 
 The Elasticsearch container is configured for a maximum heap size of 750MB to prevent out of memory crashes when using the default 2GB memory limit enforced by Docker for Mac and Docker for Windows installations or for Linux installations limited to less than 2GB. If you require additional memory for Elasticsearch override the value in a `docker-compose.override.yml` file as described below.
 
@@ -62,10 +55,10 @@ services:
 Add this alias to `~/.bash_profile` to easily run WP-CLI command.
 
 ```
-alias dcwp='docker-compose exec --user www-data phpfpm wp'
+alias wpdwp='docker-compose exec --user www-data phpfpm wp'
 ```
 
-Instead of running a command like `wp plugin install` you instead run `dcwp plugin install` from anywhere inside the
+Instead of running a command like `wp plugin install` you instead run `wpdwp plugin install` from anywhere inside the
 `<my-project-name>` directory, and it runs the command inside of the php container.
 
 There is also a script in the `/bin` directory that will allow you to execute WP CLI from the project directory directly: `./bin/wp plugin install`.
@@ -75,10 +68,10 @@ There is also a script in the `/bin` directory that will allow you to execute WP
 You can easily access the WordPress/PHP container with `docker-compose exec`. Here's a simple alias to add to your `~/.bash_profile`:
 
 ```
-alias dcbash='docker-compose exec --user root phpfpm bash'
+alias wpdwp='docker-compose exec --user root phpfpm bash'
 ```
 
-This alias lets you run `dcbash` to SSH into the PHP/WordPress container.
+This alias lets you run `wpdwp` to SSH into the PHP/WordPress container.
 
 Alternatively, there is a script in the `/bin` directory that allows you to SSH in to the environment from the project directory directly: `./bin/ssh`.
 
