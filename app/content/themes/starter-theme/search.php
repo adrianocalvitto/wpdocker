@@ -1,19 +1,18 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Search results page
+ *
+ * Methods for TimberHelper can be found in the /lib sub-directory
+ *
+ * @package  WordPress
+ * @subpackage  Timber
+ * @since   Timber 0.1
+ */
 
-	<main role="main">
-		<!-- section -->
-		<section>
+$templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 
-			<h1><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
+$context          = Timber::get_context();
+$context['title'] = 'Search results for ' . get_search_query();
+$context['posts'] = new Timber\PostQuery();
 
-			<?php get_template_part('loop'); ?>
-
-			<?php get_template_part('pagination'); ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
-
-<?php get_footer(); ?>
+Timber::render( $templates, $context );

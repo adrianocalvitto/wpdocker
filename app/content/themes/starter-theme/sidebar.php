@@ -1,15 +1,10 @@
-<!-- sidebar -->
-<aside class="sidebar" role="complementary">
+<?php
+/**
+ * The Template for the sidebar containing the main widget area
+ *
+ *
+ * @package  WordPress
+ * @subpackage  Timber
+ */
 
-	<?php get_template_part('searchform'); ?>
-
-	<div class="sidebar-widget">
-		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
-	</div>
-
-	<div class="sidebar-widget">
-		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
-	</div>
-
-</aside>
-<!-- /sidebar -->
+Timber::render( array( 'sidebar.twig' ), $data );

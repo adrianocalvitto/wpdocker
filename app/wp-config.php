@@ -5,14 +5,8 @@ $webroot_dir = $root_dir . '/web';
 require_once($html_dir . '/vendor/autoload.php');
 /* Expose global env() function from oscarotero/env */
 Env::init();
-/* Use Dotenv to set required environment variables and load .env file in root */
-$dotenv = new Dotenv\Dotenv($html_dir .'/environments/development');
-if (file_exists($html_dir . '/environments/development/.env')) {
-    $dotenv->load();
-    $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL']);
-}
 /* Set up our global environment constant and load its config first */
-define('WP_ENV', env('WP_ENV') ?: 'production');
+define('WP_ENV', env('WP_ENV') ?: 'development');
 /**
  * URLs
  */
@@ -77,6 +71,11 @@ $table_prefix  = env('DB_PREFIX');
 define('SAVEQUERIES', env('SAVEQUERIES'));
 define('WP_DEBUG', env('WP_DEBUG'));
 define('SCRIPT_DEBUG', env('SCRIPT_DEBUG'));
+/*
+ * https://codex.wordpress.org/Administration_Over_SSL
+ */
+define('FORCE_SSL_ADMIN', true);
+$_SERVER["HTTPS"] = "on";
 /* That's all, stop editing! Happy blogging. */
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
