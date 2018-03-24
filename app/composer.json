@@ -29,7 +29,6 @@
     "johnpbloch/wordpress": "4.9.4",
     "oscarotero/env": "^1.1.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/gutenberg": "*",
     "timber/timber": "^1.7"
   },
   "require-dev": {
