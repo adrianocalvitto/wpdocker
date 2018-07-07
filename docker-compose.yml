@@ -12,16 +12,12 @@ services:
       MYSQL_DATABASE: wpdocker
       MYSQL_USER: wpdocker
       MYSQL_PASSWORD: password
-  memcached:
-    image: memcached:latest
-    restart: always
   phpfpm:
     image: johnpbloch/phpfpm:7.1
     env_file:
       - ./config/development.env
     depends_on:
       - mysql
-      - memcached
     volumes:
       - "./app:/var/www/html"
       - "./config/php-fpm/php.ini:/usr/local/etc/php/php.ini"
