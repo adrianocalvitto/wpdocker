@@ -2,11 +2,11 @@
 
 ## What's Inside
 
-This project is based on [docker-compose](https://docs.docker.com/compose/). By default, the following containers are started: PHP-FPM, MySQL, Elasticsearch, nginx, and Memcached. The `/app` directory is the html root which is mapped to the nginx container.
+This project is based on [docker-compose](https://docs.docker.com/compose/).
+By default, the following containers are started: PHP-FPM, MySQL and nginx.
+The `/app` directory is the html root which is mapped to the nginx container.
 
-You can directly edit PHP, nginx, and Elasticsearch configuration files from within the repo as they are mapped to the correct locations in containers.
-
-The `/config/elasticsearch/plugins` folder is mapped to the plugins folder in the Elasticsearch container. You can drop Elasticsearch plugins in this folder to have them installed within the container.
+You can directly edit PHP and nginx configuration files from within the repo as they are mapped to the correct locations in containers.
 
 ## Requirements
 
@@ -22,33 +22,8 @@ The `/config/elasticsearch/plugins` folder is mapped to the plugins folder in th
 	1. On Linux / Unix / OSX, run `sh bin/setup.sh`.
 	2. On Windows, run `./bin/setup`.
 5. Navigate to `http://localhost` in a browser to finish WordPress setup.
-	1. If you want to use a domain other than `http://localhost`, you'll need to add an entry to your hosts file. Ex: `127.0.0.1 docker.dev`
 
-Default MySQL connection information (from within PHP-FPM container) can be found in the environment definition for the mysql service in docker-compose.yml file.
-
-Default Elasticsearch connection information (from within PHP-FPM container):
-
-```
-Host: http://elasticsearch:9200
-```
-
-The Elasticsearch container is configured for a maximum heap size of 750MB to prevent out of memory crashes when using the default 2GB memory limit enforced by Docker for Mac and Docker for Windows installations or for Linux installations limited to less than 2GB. If you require additional memory for Elasticsearch override the value in a `docker-compose.override.yml` file as described below.
-
-## Docker Compose Overrides File
-
-Adding a `docker-compose.override.yml` file alongside the `docker-compose.yml` file, with contents similar to
-the following, allows you to change the domain associated with the cluster while retaining the ability to pull in changes from the repo.
-
-```
-version: '3'
-services:
-  phpfpm:
-    extra_hosts:
-      - "dashboard.dev:172.18.0.1"
-  elasticsearch:
-    environment:
-      ES_JAVA_OPTS: "-Xms2g -Xmx2g"
-```
+Default MySQL connection information can be found in `development.env`.
 
 ## WP-CLI
 
@@ -58,8 +33,7 @@ Add this alias to `~/.bash_profile` to easily run WP-CLI command.
 alias wpdwp='docker-compose exec --user www-data phpfpm wp'
 ```
 
-Instead of running a command like `wp plugin install` you instead run `wpdwp plugin install` from anywhere inside the
-`<my-project-name>` directory, and it runs the command inside of the php container.
+Instead of running a command like `wp plugin install` you now can run `wpdwp plugin install` from anywhere inside the `<my-project-name>` directory, and it runs the command inside of the php container.
 
 There is also a script in the `/bin` directory that will allow you to execute WP CLI from the project directory directly: `./bin/wp plugin install`.
 
@@ -77,4 +51,4 @@ Alternatively, there is a script in the `/bin` directory that allows you to SSH 
 
 ## Credits
 
-This project is based on the inspiring work by (10up)(https://github.com/10up/)
+This project is based on the inspiring work by [10up](https://github.com/10up/)
