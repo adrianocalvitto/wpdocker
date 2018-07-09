@@ -33,13 +33,14 @@ Add this alias to `~/.bash_profile` to easily run WP-CLI command.
 alias wpdwp='docker-compose exec --user www-data phpfpm wp'
 ```
 
-Instead of running a command like `wp plugin install` you now can run `wpdwp plugin install` from anywhere inside the `<my-project-name>` directory, and it runs the command inside of the php container.
+Instead of running `wp plugin install`, run `wpdwp plugin install` from anywhere inside the `<my-project-name>` directory.
 
 There is also a script in the `/bin` directory that will allow you to execute WP CLI from the project directory directly: `./bin/wp plugin install`.
 
 ## SSH Access
 
-You can easily access the WordPress/PHP container with `docker-compose exec`. Here's a simple alias to add to your `~/.bash_profile`:
+You can easily access the WordPress/PHP container with `docker-compose exec`. 
+Here's a simple alias to add to your `~/.bash_profile`:
 
 ```
 alias wpdwp='docker-compose exec --user root phpfpm bash'
