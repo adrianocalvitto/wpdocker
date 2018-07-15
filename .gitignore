@@ -33,7 +33,6 @@ config.codekit
 /app/content/upgrade
 /app/vendor
 /app/web
-#!/app/content/themes
 
 /data/*
 !/data/.gitkeep
