@@ -28,15 +28,15 @@ node_modules
 
 config.codekit
 
-/app/content
+/app/content/plugins
+/app/content/uploads
+/app/content/upgrade
 /app/vendor
 /app/web
-!/app/content/themes
+#!/app/content/themes
 
 /data/*
 !/data/.gitkeep
 /logs/*
 !/logs/.gitkeep
 notes.md
-/config/elasticsearch/plugins/*
-docker-compose.override.yml
