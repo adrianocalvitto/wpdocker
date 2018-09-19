@@ -31,7 +31,9 @@
     "roots/wp-password-bcrypt": "1.0.0"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.0.2"
+    "squizlabs/php_codesniffer": "^3.0.2",
+    "wpackagist-plugin/wp-optimize": "^2.2",
+    "wpackagist-plugin/query-monitor": "^3.1"
   },
   "extra": {
     "installer-paths": {
