@@ -28,9 +28,7 @@ node_modules
 
 config.codekit
 
-/app/content/plugins
-/app/content/uploads
-/app/content/upgrade
+/app/content
 /app/vendor
 /app/web
 
