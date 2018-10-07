@@ -29,6 +29,7 @@ node_modules
 config.codekit
 
 /app/content
+/app/debug
 /app/vendor
 /app/web
 
