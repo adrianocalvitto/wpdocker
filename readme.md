@@ -1,12 +1,13 @@
-# WordPress Docker Development Environment
+# WpDocker
 
 ## What's Inside
 
 This project is based on [docker-compose](https://docs.docker.com/compose/).
-By default, the following containers are started: PHP-FPM, MySQL and nginx.
+By default, the following containers are started: PHP-FPM, MySQL, nginx and Webgrind.
 The `/app` directory is the html root which is mapped to the nginx container.
 
-You can directly edit PHP and nginx configuration files from within the repo as they are mapped to the correct locations in containers.
+You can directly edit PHP and nginx configuration files from in the repo as they
+are mapped to correct locations within containers.
 
 ## Requirements
 
@@ -49,6 +50,12 @@ alias wpdwp='docker-compose exec --user root phpfpm bash'
 This alias lets you run `wpdwp` to SSH into the PHP/WordPress container.
 
 Alternatively, there is a script in the `/bin` directory that allows you to SSH in to the environment from the project directory directly: `./bin/ssh`.
+
+## Debugging
+
+Explanation for xdebug
+
+Explanation for webgrind
 
 ## Credits
 
