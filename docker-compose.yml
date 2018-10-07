@@ -36,3 +36,11 @@ services:
       - "./config/certs:/etc/nginx/certs"
       - "./logs/nginx:/var/log/nginx"
     restart: always
+  webgrind:
+    image: wodby/webgrind:1.5
+    depends_on:
+      - phpfpm
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./app/debug/:/tmp"
