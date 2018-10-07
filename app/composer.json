@@ -33,8 +33,7 @@
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
     "wpackagist-plugin/wp-optimize": "^2.2",
-    "wpackagist-plugin/query-monitor": "^3.1",
-    "jokkedk/webgrind": "^1.5"
+    "wpackagist-plugin/query-monitor": "^3.1"
   },
   "extra": {
     "installer-paths": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c276fc8de3628e9b29909a815bc821a6",
+    "content-hash": "b4fcd97f7e265490400e28cb85ae88de",
     "packages": [
         {
             "name": "composer/installers",
@@ -355,46 +355,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "jokkedk/webgrind",
-            "version": "v1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jokkedk/webgrind.git",
-                "reference": "f0b6f7e0e61fb303fd6d8c741571951e9a74960b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jokkedk/webgrind/zipball/f0b6f7e0e61fb303fd6d8c741571951e9a74960b",
-                "reference": "f0b6f7e0e61fb303fd6d8c741571951e9a74960b",
-                "shasum": ""
-            },
-            "type": "application",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Joakim Nygård",
-                    "email": "joakim@scienta.dk",
-                    "homepage": "http://jokke.dk/"
-                },
-                {
-                    "name": "Jacob Oettinger",
-                    "email": "jacob@oettinger.dk",
-                    "homepage": "http://oettinger.dk/"
-                }
-            ],
-            "description": "Webgrind is a Xdebug profiling web frontend in PHP5. It implements a subset of the features of kcachegrind and installs in seconds and works on all platforms. For quick'n'dirty optimizations it does the job.",
-            "homepage": "https://github.com/jokkedk/webgrind",
-            "keywords": [
-                "Xdebug",
-                "debug",
-                "webgrind"
-            ],
-            "time": "2017-03-18T21:44:36+00:00"
-        },
         {
             "name": "squizlabs/php_codesniffer",
             "version": "3.3.1",
