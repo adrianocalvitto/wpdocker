@@ -3,10 +3,10 @@
 ## What's Inside
 
 This project is based on [docker-compose](https://docs.docker.com/compose/).
-By default, the following containers are started: PHP-FPM, MySQL, nginx and Webgrind.
+By default, the following containers are started: PHP-FPM, MySQL, nginx and WebGrind.
 The `/app` directory is the html root which is mapped to the nginx container.
 
-You can directly edit PHP and nginx configuration files from in the repo as they
+PHP and nginx configuration files can be edited directly in the repo as they
 are mapped to correct locations within containers.
 
 ## Requirements
@@ -51,11 +51,14 @@ This alias lets you run `wpdwp` to SSH into the PHP/WordPress container.
 
 Alternatively, there is a script in the `/bin` directory that allows you to SSH in to the environment from the project directory directly: `./bin/ssh`.
 
-## Debugging
+## Profiling
 
-Explanation for xdebug
+Profiles can be collected using [Xdebug](https://xdebug.org), allowing developers to find bottlenecks in PHP scripts and visualize those via [WebGrind](https://github.com/jokkedk/webgrind).
 
-Explanation for webgrind
+To start collecting profiles:
+
+1. Hit the page to be profiled adding `XDEBUG_PROFILE` as a query param (E.g. `https://localhost?XDEBUG_PROFILE`)
+2. Open `http://localhost:8080` in a new tab or window to use WebGrind.
 
 ## Credits
 
